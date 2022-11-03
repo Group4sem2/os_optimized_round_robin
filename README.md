@@ -1,5 +1,5 @@
 # os_optimized_round_robin
-#Idea
+# Idea
 The current way in which the Round Robin works is where each process is assigned a fixed time slot in a cyclic way. It is basically the preemptive version of First come First Serve CPU Scheduling algorithm. 
 Round Robin CPU Algorithm generally focuses on Time Sharing technique.  The period of time for which a process or job is allowed to run in a pre-emptive method is called time quantum.  Each process or job present in the ready queue is assigned the CPU for that time quantum, if the execution of the process is completed during that time then the process will end else the process will go back to the waiting table and wait for its next turn to complete the execution.
 With the current implementation there are many advantages but also some disadvantages, disadvantages is such that suppose there is a ready queue of 500 process waiting to be occupied by the CPU and if the process get the CPU and after a time quantum if the process is just about to finish, that is it only require few milliseconds of the CPU processing to complete the process. It still moves back to the top of the ready queue. Now the task only require few millisecond of CPU process to complete, but it still have to wait for roughly  500 time quantum to again getting the CPU, considering that all the process in the queue require about a time quantum of process time to complete. 
@@ -15,7 +15,7 @@ To solve the same issue we came up with a simple solution that is to use two que
 
 
 
-#WORKING
+# WORKING
 
 Let us consider two queue named RQ for ready queue and QQ for Quickly queue, basically its the queue of the process that can finish quickly if CPU is allotted to them.
 
